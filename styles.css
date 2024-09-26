@@ -1,0 +1,281 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Merriweather:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, rgba(217,35,26,1) 0%, rgba(243,156,18,1) 100%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo Styling with the Same Font as Navigation Links */
+nav .logo h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 36px;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin: 0; /* Add subtle shadow for depth */
+}
+
+/* Navbar Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links li a {
+    font-family: 'Dancing Script', cursive;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for links */
+.nav-links li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile menu toggle (hamburger) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    /* Hide navigation links initially */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: linear-gradient(90deg, rgba(217,35,26,1) 0%, rgba(243,156,18,1) 100%);
+    }
+
+    /* Display navigation links when active */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Mobile Menu Toggle (Hamburger) */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Full-width links for mobile */
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    .nav-links li a {
+        padding: 15px;
+        border-radius: 0;
+    }
+}
+
+.hero {
+    background-image: url('durga6.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-text {
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+}
+
+.hero-text h2 {
+    font-size: 48px;
+    font-family: 'Cinzel', serif;
+}
+
+.cta-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f39c12;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.schedule, .gallery, .contact {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.about-section {
+    padding: 60px 20px;
+    background-image: url('durga5.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    color: #333; /* Dark text color for good readability */
+}
+
+.about-section h2 {
+    font-family: 'Cinzel', serif; /* Elegant, serif font for the heading */
+    font-size: 36px;
+    color: #eed0cf; /* Festive red to match the Durga Puja theme */
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.about-section p {
+    font-family: 'Merriweather', serif; /* Readable serif font for the body text */
+    font-size: 18px;
+    line-height: 1.8; /* Add line height for better readability */
+    margin: 0 auto;
+    max-width: 800px; /* Limit the width of the paragraph for better reading experience */
+    color: #e2dede; /* Softer dark grey for a more elegant feel */
+}
+
+.schedule h2, .about h2, .gallery h2, .contact h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-family: 'Cinzel', serif;
+}
+.schedule-section {
+    padding: 60px 20px;
+    background-image: url('durga4.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #e7d0d0;
+    text-align: center;
+}
+.timeline .event {
+    margin-bottom: 20px;
+}
+.gallery-section {
+    padding: 60px 20px;
+    background-image: url('durga3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    text-align: center;
+}
+.gallery .image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+}
+.contact-section {
+    padding: 60px 20px;
+    /* background-image: url('durga7.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; */
+    background-color: #474657;
+    color: #fff;
+    text-align: center;
+}
+.contact-info {
+    margin-bottom: 20px;
+}
+/* General Styling for h2 */
+h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 36px;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Shadow to make text more readable */
+}
+
+/* General Styling for p */
+p {
+    font-family: 'Merriweather', serif;
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Text shadow to make paragraph text readable on images */
+}
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #d9231a;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+#countdown-timer {
+    margin-top: 20px;
+    color: white;
+    font-family: 'Cinzel', serif;
+}
+
+#timer {
+    font-size: 24px;
+    font-weight: bold;
+}
