@@ -24,7 +24,7 @@ const Navbar = () => {
             </nav>
           </div>
         </header>
-        <Body/>
+        {/* <Body/> */}
        </>
       
   

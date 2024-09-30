@@ -1,8 +1,9 @@
 import About from "./components/AboutUs";
+import Body from "./components/Body";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Gallery from "./components/Gallary";
-import Heading from "./components/Header/Heading";
+import Header from "./components/Header/Heading" ;
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Schedule from "./components/Sechedule";
@@ -11,17 +12,14 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 export default function App() {
   return (
     <Router>
-      {/* Navbar will always be shown on all pages */}
-
-      {/* All page-specific routes */}
+<Navbar/>
       <Routes>
-        {/* Home route */}
         <Route path="/" element={
-               <Navbar />
+              <Body />
+
 
         } />
 
-        {/* About page route */}
         <Route path="/about" element={<About />} />
 
         {/* Schedule page route */}
