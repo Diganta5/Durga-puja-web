@@ -1,63 +1,62 @@
 /* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Merriweather:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
-body, html {
+body {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
 }
 
 /* Navbar Styles */
 nav {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
-    width: 100%;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, rgba(217,35,26,1) 0%, rgba(243,156,18,1) 100%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 /* Logo Styling */
-nav h1 {
-    font-size: 24px;
+nav .logo h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 36px;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin: 0;
 }
 
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.menu-toggle .bar {
-    height: 3px;
-    width: 25px;
-    background-color: #fff;
-    margin: 5px 0;
-}
-
-ul.nav-links {
-    list-style: none;
+/* Navbar Links */
+.nav-links {
     display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-ul.nav-links li {
+.nav-links li {
     margin-left: 20px;
 }
 
-ul.nav-links li a {
-    color: #fff;
+.nav-links li a {
+    font-family: 'Dancing Script', cursive;
+    color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
 }
 
-ul.nav-links li a:hover {
-    color: #ffcc00;
+/* Hover effect for links */
+.nav-links li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
-
 
 /* Mobile menu toggle (hamburger) */
 .menu-toggle {
@@ -74,82 +73,65 @@ ul.nav-links li a:hover {
     transition: 0.3s;
 }
 
-
-
-
-.hero {
-    height: 100vh;
-    background: url('durga61.jpg') center/cover no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding-top: 80px; /* Adjust to prevent overlap with navbar */
-}
-
-.hero h2 {
-    font-family: 'Cinzel', serif;
-    font-size: 36px;
-    color: #fff;
-}
-
-.hero p {
-    color: #fff;
-    font-size: 18px;
-    max-width: 600px;
-    margin: 20px auto;
-}
-
-/* Mobile Styles */
+/* Media Queries for Mobile */
 @media (max-width: 768px) {
-    /* Smaller Navbar for Mobile */
-    nav {
-        padding: 10px;
-    }
-
-    nav h1 {
-        font-size: 18px;
-    }
-
-    ul.nav-links {
-        display: none;
+    /* Hide navigation links initially */
+    .nav-links {
+        display: none; /* Hide links by default */
         flex-direction: column;
         width: 100%;
-        text-align: center;
-        background-color: #333;
         position: absolute;
         top: 60px;
         left: 0;
+        background: linear-gradient(90deg, rgba(217,35,26,1) 0%, rgba(243,156,18,1) 100%);
     }
 
-    ul.nav-links li {
-        margin: 10px 0;
+    /* Display navigation links when active */
+    .nav-links.active {
+        display: flex; /* Show links when active */
     }
 
+    /* Mobile Menu Toggle (Hamburger) */
     .menu-toggle {
-        display: flex;
+        display: flex; /* Show hamburger on mobile */
     }
 
-    /* Hero Section Adjustments for Mobile */
-    .hero h2 {
-        font-size: 28px;
+    /* Full-width links for mobile */
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        margin: 0;
     }
 
-    .hero p {
-        font-size: 16px;
-    }
-
-    /* Adjust margin to avoid overlap between sections */
-    .about-section {
-        margin-top: 60px;
-        padding: 20px;
+    .nav-links li a {
+        padding: 15px;
+        border-radius: 0;
     }
 }
 
-/* Toggle Navigation Menu (JavaScript will add .active class) */
-.active .nav-links {
+
+.hero {
+    background-image: url('durga61.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.hero-text {
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+}
+
+.hero-text h2 {
+    font-size: 48px;
+    font-family: 'Cinzel', serif;
+}
+
 .cta-button {
     margin-top: 20px;
     padding: 10px 20px;
