@@ -74,38 +74,58 @@ nav .logo h1 {
 }
 
 /* Media Queries for Mobile */
+/* For Mobile View */
 @media (max-width: 768px) {
-    /* Hide navigation links initially */
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
     .nav-links {
-        display: none; /* Hide links by default */
+        display: none;
         flex-direction: column;
+        background-color: #333;
         width: 100%;
         position: absolute;
-        top: 60px;
+        top: 100%;
         left: 0;
-        background: linear-gradient(90deg, rgba(217,35,26,1) 0%, rgba(243,156,18,1) 100%);
-    }
-
-    /* Display navigation links when active */
-    .nav-links.active {
-        display: flex; /* Show links when active */
-    }
-
-    /* Mobile Menu Toggle (Hamburger) */
-    .menu-toggle {
-        display: flex; /* Show hamburger on mobile */
-    }
-
-    /* Full-width links for mobile */
-    .nav-links li {
-        width: 100%;
         text-align: center;
-        margin: 0;
     }
 
-    .nav-links li a {
-        padding: 15px;
-        border-radius: 0;
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hero h2 {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    /* Reduce the header size */
+    .logo h1 {
+        font-size: 20px;
+    }
+
+    /* Hero Section adjustments */
+    .hero-text {
+        padding: 20px;
+    }
+
+    #countdown-timer {
+        font-size: 18px;
     }
 }
 
