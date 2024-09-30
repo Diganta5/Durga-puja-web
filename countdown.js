@@ -21,24 +21,23 @@ const countdown = () => {
     const secondsLeft = Math.floor((gap % minute) / second);
 
     // Display the result in the element with id="timer"
-    const timerDisplay = document.getElementById("timer");
-    if (gap >= 0) {
-        timerDisplay.innerHTML = `${daysLeft}d ${hoursLeft}h ${minutesLeft}m ${secondsLeft}s`;
-    } else {
+    document.getElementById("timer").innerHTML = 
+        `${daysLeft}d ${hoursLeft}h ${minutesLeft}m ${secondsLeft}s`;
+
+    // If the countdown is finished, display a message
+    if (gap < 0) {
         clearInterval(timerInterval);
-        timerDisplay.innerHTML = "The Puja has started!";
+        document.getElementById("timer").innerHTML = "The Puja has started!";
     }
 };
-
-// Update the countdown every second
-const timerInterval = setInterval(countdown, 1000);
-
-// Select the elements for the mobile menu toggle
+// Select the elements
 const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.getElementById('nav-links');
 
+// Add event listener to toggle the menu
 mobileMenu.addEventListener('click', () => {
     navLinks.classList.toggle('active');
-    mobileMenu.classList.toggle('active');
 });
 
+// Update the countdown every second
+const timerInterval = setInterval(countdown, 1000);
