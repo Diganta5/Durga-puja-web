@@ -30,14 +30,13 @@ const countdown = () => {
         document.getElementById("timer").innerHTML = "The Puja has started!";
     }
 };
-// Select the elements
-const mobileMenu = document.getElementById('mobile-menu');
-const navLinks = document.getElementById('nav-links');
+ // Select the elements
+ const mobileMenu = document.getElementById('mobile-menu');
+ const navLinks = document.getElementById('nav-links');
 
-// Add event listener to toggle the menu
-mobileMenu.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
-
+ // Add event listener to toggle the menu
+ mobileMenu.addEventListener('click', () => {
+     navLinks.classList.toggle('active');
+ });
 // Update the countdown every second
 const timerInterval = setInterval(countdown, 1000);
