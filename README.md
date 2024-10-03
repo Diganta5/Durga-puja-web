@@ -25,7 +25,7 @@ Visit the live version of the website here: [Biswas-Nunnan Sarbojonin Durgotsab 
 ├── images/                 # Folder containing image assets
 ├── _headers                # Netlify headers file for CORS settings
 
-bash```
+```
 
 ## 🖼️ Image Hosting
 
