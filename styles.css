@@ -356,6 +356,77 @@ strong {
     margin: 0;
 }
 
+/* General Styling */
+.student-list {
+    margin: 20px 0;
+    padding: 10px;
+}
+
+.student-list h3 {
+    text-align: center;
+    font-size: 2em;
+    color: #d03d3d; /* Strong red for the main heading */
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+}
+
+.student-list h4 {
+    font-size: 1.5em;
+    color: #333; /* Subheading color */
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px;
+    text-align: left; /* Center the subheading */
+}
+
+/* Column Structure for Desktop */
+.student-columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.student-columns > div {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.student-columns > div:last-child {
+    margin-right: 0;
+}
+
+.student-list ol {
+    padding-left: 20px; /* Ensure list is indented */
+    list-style-position: inside; /* Align list numbers with text */
+}
+
+.student-list ol li {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    text-align: left; /* Align items to the left */
+}
+
+/* Responsive Design for Mobile - Single Column Layout */
+@media (max-width: 768px) {
+    .student-columns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .student-columns > div {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .student-list h4 {
+        text-align: left; /* Align subheadings to the left on mobile */
+    }
+
+    .student-list ol {
+        padding-left: 10px; /* Reduce indentation for mobile */
+    }
+}
+
+
+
 
 
 .timeline .event {

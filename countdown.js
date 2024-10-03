@@ -40,3 +40,47 @@ const countdown = () => {
  });
 // Update the countdown every second
 const timerInterval = setInterval(countdown, 1000);
+
+/// JavaScript function to load and display the student list
+function loadStudentList() {
+    fetch('studentlist2024.csv')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(data => {
+            const madhyamikList = document.getElementById('madhyamik-list');
+            const hsList = document.getElementById('hs-list');
+            const graduationList = document.getElementById('graduation-list');
+            const rows = data.split('\n').slice(1); // Skip the header row
+
+            let madhyamikHTML = '', hsHTML = '', graduationHTML = '';
+
+            rows.forEach((row, index) => {
+                const columns = row.split(',');
+                if (columns.length === 4) { // Assuming CSV has 4 columns: Name, Class, Section, Achievement
+                    const studentInfo = `<li>${columns[0]} - ${columns[2]} (${columns[3]})</li>`;
+                    
+                    if (columns[1] === 'Madhyamik') {
+                        madhyamikHTML += studentInfo;
+                    } else if (columns[1] === 'HS') {
+                        hsHTML += studentInfo;
+                    } else if (columns[1] === 'Graduation') {
+                        graduationHTML += studentInfo;
+                    }
+                }
+            });
+
+            madhyamikList.innerHTML = madhyamikHTML || '<li>No Madhyamik students available.</li>';
+            hsList.innerHTML = hsHTML || '<li>No HS students available.</li>';
+            graduationList.innerHTML = graduationHTML || '<li>No Graduation students available.</li>';
+        })
+        .catch(error => {
+            console.error('Error loading student list:', error);
+            document.querySelector('.student-list').innerHTML = '<p>Failed to load student list. Please try again later.</p>';
+        });
+}
+
+document.addEventListener('DOMContentLoaded', loadStudentList);
