@@ -44,7 +44,14 @@ const countdown = () => {
     // If no festivals are left, display that the festival has ended
     document.getElementById("timer").innerHTML = "The Durga Puja festival has ended!";
 };
-
+ // Select the elements
+ const mobileMenu = document.getElementById('mobile-menu');
+ const navLinks = document.getElementById('nav-links');
+ // Add event listener to toggle the menu
+ mobileMenu.addEventListener('click', () => {
+     navLinks.classList.toggle('active');
+ });
+ 
 // Update the countdown every second
 const timerInterval = setInterval(countdown, 1000);
 
